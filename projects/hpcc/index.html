@@ -47,59 +47,55 @@
 			<h2 class="section">Overview</h2>
 			<div class="content">
 				<p>
-				Congestion control (CC) is the key to achieving ultra-low latency,
-				high bandwidth and network stability in high-speed networks. From
-				years of experience operating large-scale and high-speed RDMA
-				networks, we find the existing high-speed CC schemes have inherent limitations for reaching these goals. 
-				</p>
-				<p>
-				We design HPCC (High Precision Congestion Control), a new high-speed CC
-				mechanism which achieves the three goals simultaneously. 
+				HPCC, a new high-speed CC
+				mechanism, achieves ultra-low latency, high bandwidth, and network stability simultaneously. 
 				<b>HPCC leverages in-network telemetry (INT) to obtain precise link load
-				information and controls traffic precisely. </b> By addressing challenges
-				such as delayed INT information during congestion and overreaction to INT information, HPCC can quickly converge to utilize free
+				information and controls traffic precisely. </b> 
+				HPCC can quickly converge to utilize free
 				bandwidth while avoiding congestion, and can maintain near-zero
-				in-network queues for ultra-low latency. HPCC is also fair and
-				easy to deploy in hardware. 
+				in-network queues for ultra-low latency. 
 				</p>
+				<center><img src="figs/overview.png" width="60%"></center>
 				<p>	
 				HPCC has been deployed in Alibaba. It shortens the flow completion times by up to 95% compared to the previous generation CC (DCQCN) for datacenters.
 				</p>
 				<p>
-				<b>[New] We have recently enhanced HPCC with PINT, a probalistic version of INT that reduces the overhead to ≤2 bytes without losing precision for HPCC.</b>
+				<b>[New] We have recently enhanced HPCC with PINT, a probalistic version of INT that reduces the INT overhead to ≤2 bytes without losing precision for HPCC.</b>
 				</p>
 			</div><!--Overview-->
 			<h2 class="section">News</h2>
 			<div>
 				<ul>
-				<li><a href="../../publications/pint.pdf">PINT is published in SIGCOMM' 2020</a>, which enhances HPCC by removing the INT overhead without losing HPCC's precision.
-				<li><b>HPCC is widely reported by media globally</b>: 
-				<a href="https://www.intelligentdatacentres.com/2019/08/28/alibaba-unveils-congestion-control-mechanism-for-ultra-high-speed-data-centres/">Intelligent Data Centres (UK)</a>,
-				<a href="https://www.intelligentcio.com/eu/2019/08/28/alibaba-unveils-congestion-control-mechanism-for-ultra-high-speed-data-centres/">Intelligent CIO (UK)</a>,
-				<a href="https://data-economy.com/alibaba-builds-further-on-impressive-cloud-sales-growth/">Data Economy</a>,
-				<a href="https://www.it-daily.net/shortnews/22200-staukontrollmechanismus-fuer-ultra-high-speed-rechenzentren">it-daily.net (Germany)</a>,
-				<a href="https://www.infohightech.com/alibaba-devoile-un-nouveau-mecanisme-de-controle-de-la-congestion-pour-les-datacenters-hautes-performances/">Info HighTech(France)</a>,
-				<a href="https://www.channelbp.com/content/alibaba-d%C3%A9voile-un-nouveau-m%C3%A9canisme-de-contr%C3%B4le-de-la-congestion-pour-les-datacenters-haute">Channel Business Partners (France)</a>,
-				<a href="https://www.lemagit.fr/actualites/252469976/Des-chercheurs-dAlibaba-accelerent-de-95-les-reseaux-Ethernet">Le Mag IT</a>,
-				<a href="http://www.itnumeric.com/alibaba-devoile-un-nouveau-mecanisme-de-controle-de-la-congestion-pour-les-datacenters-hautes-performances/">IT Numeric</a>,
-				<a href="http://www.globalsecuritymag.fr/Alibaba-devoile-un-nouveau,20190829,90257.html">Global Security Mag</a>,
-				<a href="http://www.mtom-mag.com/article8895.html">M2M Mag</a>
-				<a href="http://www.intrusio.fr/non-classe/alibaba-devoile-un-nouveau-mecanisme-de-controle-de-la-congestion-pour-les-datacenters-hautes-performances/">Intrusio</a>
-				<a href="https://animasoft.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">Animasoft</a>,
-				<a href="https://itrnews.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR News</a>,
-				<a href="https://itchannel.info/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">IT Channel</a>,
-				<a href="https://lavienumerique.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">La Vie Numérique</a>,
-				<a href="https://itrinnovation.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Innovation</a>,
-				<a href="https://itrmanager.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Manager</a>,
-				<a href="https://itrsoftware.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Software</a>,
-				<a href="https://tendancesit.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">Tendances IT</a>,
-				<a href="https://itrmobiles.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Mobiles</a>,
-				<a href="https://itrgames.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Games</a>,
-				<a href="https://ipe-newsmag.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">IPE Newsmag</a>,
-				<a href="https://electronique-newsmag.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">Electronique-Newsmag</a>,
-				<a href="https://lentrepriseconnectee.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">l'Entreprise connectée</a>,
-				<a href="https://infodsi.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">Info DSI</a>,
-				<li><a href="../../publications/hpcc.pdf">HPCC is published in SIGCOMM' 2019</a>. Please watch our <a href="https://dlnext.acm.org/doi/abs/10.1145/3341302.3342085">conference talk video</a>.
+				<li><p><a href="../../publications/pint.pdf">PINT is published in SIGCOMM' 2020</a>, which enhances HPCC by removing the INT overhead without losing HPCC's precision.</p>
+				<li><p><b>HPCC is widely reported by media globally</b>: 
+					<a href="https://www.intelligentdatacentres.com/2019/08/28/alibaba-unveils-congestion-control-mechanism-for-ultra-high-speed-data-centres/">Intelligent Data Centres (UK)</a>,
+					<a href="https://www.intelligentcio.com/eu/2019/08/28/alibaba-unveils-congestion-control-mechanism-for-ultra-high-speed-data-centres/">Intelligent CIO (UK)</a>,
+					<a href="https://data-economy.com/alibaba-builds-further-on-impressive-cloud-sales-growth/">Data Economy</a>,
+					<a href="https://www.it-daily.net/shortnews/22200-staukontrollmechanismus-fuer-ultra-high-speed-rechenzentren">it-daily.net (Germany)</a>,
+					<a href="https://www.infohightech.com/alibaba-devoile-un-nouveau-mecanisme-de-controle-de-la-congestion-pour-les-datacenters-hautes-performances/">Info HighTech(France)</a>,
+					<a href="https://www.channelbp.com/content/alibaba-d%C3%A9voile-un-nouveau-m%C3%A9canisme-de-contr%C3%B4le-de-la-congestion-pour-les-datacenters-haute">Channel Business Partners (France)</a>,
+					<a href="https://www.lemagit.fr/actualites/252469976/Des-chercheurs-dAlibaba-accelerent-de-95-les-reseaux-Ethernet">Le Mag IT</a>,
+					<a href="http://www.itnumeric.com/alibaba-devoile-un-nouveau-mecanisme-de-controle-de-la-congestion-pour-les-datacenters-hautes-performances/">IT Numeric</a>,
+					<a href="http://www.globalsecuritymag.fr/Alibaba-devoile-un-nouveau,20190829,90257.html">Global Security Mag</a>,
+					<a href="http://www.mtom-mag.com/article8895.html">M2M Mag</a>
+					<a href="http://www.intrusio.fr/non-classe/alibaba-devoile-un-nouveau-mecanisme-de-controle-de-la-congestion-pour-les-datacenters-hautes-performances/">Intrusio</a>
+					<a href="https://animasoft.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">Animasoft</a>,
+					<a href="https://itrnews.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR News</a>,
+					<a href="https://itchannel.info/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">IT Channel</a>,
+					<a href="https://lavienumerique.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">La Vie Numérique</a>,
+					<a href="https://itrinnovation.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Innovation</a>,
+					<a href="https://itrmanager.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Manager</a>,
+					<a href="https://itrsoftware.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Software</a>,
+					<a href="https://tendancesit.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">Tendances IT</a>,
+					<a href="https://itrmobiles.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Mobiles</a>,
+					<a href="https://itrgames.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">ITR Games</a>,
+					<a href="https://ipe-newsmag.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">IPE Newsmag</a>,
+					<a href="https://electronique-newsmag.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">Electronique-Newsmag</a>,
+					<a href="https://lentrepriseconnectee.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">l'Entreprise connectée</a>,
+					<a href="https://infodsi.com/articles/180956/avec-le-mecanisme-hpcc-alibaba-cloud-compte-ameliorer-la-transmission-des-donnees-entre-data-centers.html">Info DSI</a>
+				</p>
+				<li><p><a href="../../publications/hpcc.pdf">HPCC is published in SIGCOMM' 2019</a>. Please watch our <a href="https://dlnext.acm.org/doi/abs/10.1145/3341302.3342085">conference talk video</a>.</p>
+				</ul>
 			</div>
 			<h2 class="section">Key results</h2>
 			<div class="content">
