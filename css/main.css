@@ -1,0 +1,29 @@
+div.container{
+	margin:0 8% 0 8%;
+	padding:0;
+	background-color:#FFFFFF;
+}
+
+.title h1{
+	padding:0 10 0 10
+}
+.title p{
+	padding:0 20 0 20
+}
+
+.section>p{
+	padding:0 20 0 20
+}
+.section>h2{
+	background-color:#981111;
+	padding: 0 10 0 10;
+	color:white
+}
+.section>h3{
+	padding:0 10 0 10
+}
+.section>h4{
+	padding:0 10 0 10
+}
+
+body {margin:0; padding:0; font-family:"Times New Roman", Times, serif; font-size:100%; background-color:#C11717;}
